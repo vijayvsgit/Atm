@@ -97,7 +97,8 @@ public class MainInterface {
                         denomination = input.nextInt();
                         if(denomination >0){
                             Currency.getAvailableDenominationsList().add(denomination);
-                            atm.getCurrencyMap().put(denomination,0);
+                            if(atm.getCurrencyMap().get(denomination)==null)
+                                atm.getCurrencyMap().put(denomination,0);
                         }
 
                         System.out.println("Available Denominations: " + com.bank.teller.Currency.getAvailableDenominationsList());
@@ -105,6 +106,8 @@ public class MainInterface {
                         System.out.println("Input is not in the right format");
                         return;
                     }
+                default:
+                    break;
             }
             transactionDetailsList.clear();
             try{
