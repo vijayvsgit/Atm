@@ -10,16 +10,8 @@ public class TransactionDetails {
         return denomination;
     }
 
-    public void setDenomination(int denomination) {
-        this.denomination = denomination;
-    }
-
     public int getCount() {
         return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
     }
 
     private int denomination;

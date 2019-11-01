@@ -48,7 +48,6 @@ public class ATM implements IATM{
     public List<TransactionDetails> dispense(int amount) {
         HashMap<Integer, Integer> dispenseMap = new HashMap<>();
         Iterator itr = currencyMap.keySet().iterator();
-        int total = 0;
         while(itr.hasNext() && amount!=0){
             int key = (Integer)itr.next();
             int count = currencyMap.get(key);
