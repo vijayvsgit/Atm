@@ -3,8 +3,9 @@ package com.bank.teller;
 import java.util.*;
 
 public class MainInterface {
-    static ATM atm = new ATM();
     public static void main(String[] args) {
+        IATM atm = new ATM();
+
         Map<Integer,Integer> currencyMap = null;
         Scanner input = new Scanner(System.in);
         int choice = 0;
@@ -64,12 +65,10 @@ public class MainInterface {
                     currencyMap = atm.deposit(transactionDetailsList);
                     Iterator itr = currencyMap.keySet().iterator();
                     System.out.print("Balance : ");
-                    int total = 0;
                     while(itr.hasNext()){
                         int key = (Integer)itr.next();
                         int count = currencyMap.get(key);
                         System.out.print(key + "s=" + count + ",");
-                        //total = total + (key * count);
                     }
                     System.out.print("Total="+atm.getBalance());
                     break;

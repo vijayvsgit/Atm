@@ -21,7 +21,7 @@ public class ATM implements IATM{
         return balance;
     }
 
-    public void setBalance(int balance) {
+    private void setBalance(int balance) {
         this.balance = balance;
     }
 
@@ -67,13 +67,13 @@ public class ATM implements IATM{
             dispenseStr(dispenseMap);
         }else{
             System.out.println("Denominations not available to dispense the requested amount");
-            System.out.println("Available Denominations: " + display());
+            System.out.println("Available Denominations: " + Currency.getAvailableDenominationsList() + "\n" + display());
         }
 
         return null;
     }
 
-    public void dispenseStr(HashMap<Integer, Integer>  dispenseMap){
+    private void dispenseStr(HashMap<Integer, Integer>  dispenseMap){
         Iterator itr = dispenseMap.keySet().iterator();
         StringBuffer dispenseStr = new StringBuffer();
         dispenseStr.append("Dispensed : ");
@@ -88,7 +88,7 @@ public class ATM implements IATM{
         System.out.println(display());
     }
 
-    public StringBuffer display(){
+    private StringBuffer display(){
         Iterator itr = currencyMap.keySet().iterator();
         StringBuffer displayStr = new StringBuffer ("Balance : ");
         while(itr.hasNext()){
